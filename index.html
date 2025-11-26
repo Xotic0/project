@@ -1,106 +1,47 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<nav class="navbar">
-  <a href="/index.html" class="logo">EPSF ANU</a>
-  <ul>
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/committees/ph.html">Committees</a></li>
-    <li><a href="/events/">Events</a></li>
-    <li><a href="/news/">News</a></li>
-    <li><a href="/about/about-us.html">About</a></li>
-  </ul>
-</nav>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EPSF-ANU | Home</title>
+  <title>EPSF ANU</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">EPSF-ANU</a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="about/">About</a>
-        <a href="committees/">Committees</a>
-        <a href="events/">Events</a>
-        <a href="news/">News</a>
-      </nav>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="logo" href="index.html">EPSF ANU</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="committees/index.html">Committees</a></li>
+      <li><a href="events/index.html">Events</a></li>
+      <li><a href="news/index.html">News</a></li>
+      <li><a href="about/index.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome to EPSF ANU</h1>
+    <p>Empowering future pharmacists since 2021.</p>
+  </section>
+
+  <!-- Committees preview -->
+  <div class="grid">
+    <div class="box">
+      <h3>Public Health (PH)</h3>
+      <p>Awareness campaigns & community engagement.</p>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Welcome to EPSF-ANU</h1>
-        <p class="lead">Empowering pharmacy students through education, public health and community action.</p>
-        <a href="about/" class="btn btn-primary">About Us</a>
-      </div>
-    </section>
-
-    <section class="container cards-row">
-      <div class="card card-highlight">
-        <h3>Open General Assembly (Open GA)</h3>
-        <p>Join our Open GA to learn about committees, meet the board, and get involved.</p>
-        <a class="link" href="events/open-ga-2025.html">Learn more →</a>
-      </div>
-
-      <div class="card">
-        <h3>Latest Events</h3>
-        <div id="home-events"></div>
-        <a class="link" href="events/">All events →</a>
-      </div>
-
-      <div class="card">
-        <h3>Latest News</h3>
-        <div id="home-news"></div>
-        <a class="link" href="news/">All news →</a>
-      </div>
-    </section>
-
-    <section class="container about-blurb">
-      <h2>Get involved</h2>
-      <p>Want to join a committee, lead a project, or run a campaign? Explore our committees and drop a message through the contact details on each page.</p>
-      <a href="committees/" class="btn btn-outline">See Committees</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> EPSF-ANU — All rights reserved</p>
+    <div class="box">
+      <h3>Marketing</h3>
+      <p>Branding, visuals, and social media work.</p>
     </div>
-  </footer>
+    <div class="box">
+      <h3>HR</h3>
+      <p>Development, selection, and internal growth.</p>
+    </div>
+  </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Load top 2 events & news for home
-    fetch('events/data.json').then(r=>r.json()).then(data=>{
-      const mount = document.getElementById('home-events');
-      data.slice(0,2).forEach(e=>{
-        const el = document.createElement('div');
-        el.className='mini';
-        el.innerHTML = `<strong>${e.title}</strong><div class="muted">${e.date}</div>`;
-        mount.appendChild(el);
-      });
-    }).catch(()=>{});
-
-    fetch('news/data.json').then(r=>r.json()).then(data=>{
-      const mount = document.getElementById('home-news');
-      data.slice(0,2).forEach(n=>{
-        const el = document.createElement('div');
-        el.className='mini';
-        el.innerHTML = `<strong>${n.title}</strong><div class="muted">${n.date}</div>`;
-        mount.appendChild(el);
-      });
-    }).catch(()=>{});
-    
-  </script>
-  <script src="../assets/navbar.js"></script>
+  <footer>EPSF ANU © 2025</footer>
 
 </body>
 </html>
-
-
