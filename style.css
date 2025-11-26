@@ -41,34 +41,54 @@ body {font-family:'Poppins', sans-serif; background:var(--epsf-gray); color:#222
 .card-text p {font-size:0.95rem;}
 
 
-/* Committees */
-.committee-list {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-.committee {padding:15px 25px; background:var(--epsf-white); color:var(--epsf-blue); border-radius:12px; text-decoration:none; font-weight:600; transition:0.3s; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-.committee:hover {background:var(--epsf-blue); color:var(--epsf-white);}
-
-
-/* About Us - Mobile Fix */
+/* Home Page Mobile Fix */
 @media (max-width:768px){
+  /* Navbar */
+  .navbar {flex-direction: column; gap: 10px; padding: 15px 20px;}
+  .navbar ul {flex-direction: column; gap: 10px; width: 100%; align-items: center;}
+
+  /* Hero */
+  .hero {height:300px;}
+  .hero h1 {font-size:2rem;}
+  .hero p {font-size:1rem; max-width:90%;}
+
+  /* Events / News Cards */
+  .card-container {flex-direction: column; align-items: center;}
+  .card, .card.horizontal {width:90%; max-width:350px;}
+  .card-image-small {width:100%; height:180px;}
+
+  /* About Us */
   .about-content {
-    flex-direction: column; /* Stack vertically */
-    align-items: center;    /* Center horizontally */
-    text-align: center;     /* Center text */
-    padding: 20px;          /* Add some padding */
+    flex-direction: column;  /* Stack image and text */
+    align-items: center;     /* Center content */
+    text-align: center;      /* Center text */
+    padding: 20px;           /* Add spacing */
   }
   .about-content img {
-    width: 80%;             /* Shrink image to fit mobile */
+    width: 80%;              /* Shrink image */
     max-width: 300px;
-    margin-bottom: 20px;    /* Space between image and text */
+    margin-bottom: 20px;     /* Space between image and text */
   }
   .about-content p {
-    max-width: 90%;         /* Make text fit nicely */
+    max-width: 90%;          /* Make text fit nicely */
   }
+
+  /* Committees */
+  .committee-list {
+    flex-direction: column;  /* Stack committees vertically */
+    align-items: center;     /* Center them */
+    gap: 15px;               /* Space between each committee */
+  }
+  .committee {
+    width: 80%;              /* Full width on mobile */
+    text-align: center;      /* Center text */
+    padding: 12px 20px;      /* Adjust padding */
+  }
+
+  /* Footer */
+  footer {padding: 20px;}
 }
 
-
-
-/* Footer */
-footer {text-align:center; padding:30px 20px; color:#777; background:#eaeaea; margin-top:40px;}
 
 /* Responsive */
 @media(max-width:768px){
