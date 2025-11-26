@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Events — EPSF-ANU</title><link rel="stylesheet" href="../style.css"></head>
+<body>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="../">EPSF-ANU</a></div></header>
+
+  <main class="container">
+    <h1>Events</h1>
+    <p>Upcoming and past events. Click an event for details.</p>
+
+    <div id="events-list" class="grid-events"></div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© <span id="year"></span> EPSF-ANU</p></div></footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    fetch('data.json').then(r=>r.json()).then(events=>{
+      const mount = document.getElementById('events-list');
+      mount.innerHTML = '';
+      events.forEach(e=>{
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${e.image||'../assets/placeholder.jpg'}" alt="" style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px">
+          <h3>${e.title}</h3>
+          <div class="muted">${e.date} • ${e.location||''}</div>
+          <p>${e.description.substring(0,160)}${e.description.length>160?'…':''}</p>
+          <a class="link" href="${e.page||('open-ga-2025.html')}">Details →</a>
+        `;
+        mount.appendChild(card);
+      });
+    }).catch(err=>{
+      document.getElementById('events-list').innerHTML = '<div class="card">No events found.</div>';
+    });
+  </script>
+
+  <style>
+    .grid-events{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media(max-width:900px){.grid-events{grid-template-columns:1fr}}
+  </style>
+</body>
+</html>
