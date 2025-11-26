@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Open GA 2025",
+    "date": "2025-02-12",
+    "location": "Faculty Auditorium",
+    "image": "../assets/open-ga-2025.jpg",
+    "description": "Our annual Open General Assembly introducing committees and upcoming plans. Meet the Board, attend Q&A, and learn how to join!",
+    "page": "open-ga-2025.html",
+    "slug": "open-ga-2025"
+  },
+  {
+    "title": "World Cancer Day Awareness 2025",
+    "date": "2025-02-04",
+    "location": "University Square",
+    "image": "../assets/world-cancer-day-2025.jpg",
+    "description": "Public health campaign about brain cancer awareness led by the PH committee — awareness booths, leaflets, and talks.",
+    "page": "world-cancer-day-2025.html",
+    "slug": "world-cancer-day-2025"
+  }
+]
