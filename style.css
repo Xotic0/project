@@ -1,13 +1,12 @@
-:root{
-  --epsf-blue: #0b61a4;
-  --epsf-dark: #063a6b;
-  --epsf-light: #f6fbff;
-  --muted: #6b7280;
-  --container-w: 1100px;
-  --radius: 12px;
-  --box-shadow: 0 6px 18px rgba(11,97,164,0.08);
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+:root {
+  --epsf-blue: #003e7e;
+  --epsf-light-blue: #0074c7;
+  --epsf-white: #ffffff;
+  --epsf-gray: #f2f4f7;
+
+  --epsf-gradient: linear-gradient(135deg, #003e7e, #0074c7);
 }
+
 
 *{box-sizing:border-box}
 body{margin:0;background:var(--epsf-light);color:#0b2438;line-height:1.5}
@@ -41,7 +40,17 @@ body{margin:0;background:var(--epsf-light);color:#0b2438;line-height:1.5}
 .muted{color:var(--muted);font-size:13px}
 
 /* Committees grid */
-.commit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.committee-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.committee-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
 
 /* Responsive */
 @media (max-width:900px){
@@ -52,4 +61,38 @@ body{margin:0;background:var(--epsf-light);color:#0b2438;line-height:1.5}
 @media (max-width:480px){
   .commit-grid{grid-template-columns:1fr}
   .hero h1{font-size:26px}
+}
+
+/*buttons*/
+.btn {
+    background: var(--epsf-blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: var(--epsf-light-blue);
+}
+
+
+
+
+.navbar {
+    background: var(--epsf-white);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 0 0 20px 20px;
+}
+.navbar ul {
+    display: flex;
+    gap: 25px;
+}
+.navbar a {
+    color: var(--epsf-blue);
+    font-weight: 600;
 }
