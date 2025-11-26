@@ -3,296 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EPSF ANU — Events & News</title>
-  <meta name="description" content="EPSF ANU — events, news, committees, and updates." />
-  <style>
-    /* ===== Reset & base ===== */
-    :root{
-      --accent:#0b63d6;
-      --muted:#6b7280;
-      --card:#ffffff;
-      --bg:#f4f6f8;
-      --maxw:1100px;
-      --radius:12px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial; background:var(--bg); color:#111; line-height:1.45}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-
-    /* ===== Header ===== */
-    header{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;box-shadow:0 6px 18px rgba(10,20,30,.04)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:44px;width:44px;border-radius:8px;object-fit:cover}
-    .brand h1{font-size:18px;margin:0}
-    nav ul{list-style:none;display:flex;gap:14px;align-items:center}
-    nav a{color:#0f1724;text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
-    nav a:hover{background:rgba(11,99,214,0.08)}
-    .cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700}
-    .menu-toggle{display:none;background:none;border:0;font-size:20px;cursor:pointer}
-
-    /* ===== Hero ===== */
-    .hero{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      align-items:center;
-      padding:34px 20px;
-    }
-    .hero-inner{display:flex;gap:22px;align-items:center}
-    .hero-card{background:linear-gradient(0deg, rgba(255,255,255,0.7), rgba(255,255,255,0.7)); padding:28px;border-radius:14px;box-shadow:0 12px 30px rgba(12,24,48,.08);max-width:720px}
-    .hero h2{font-size:28px;margin-bottom:8px}
-    .hero p{color:var(--muted);margin-bottom:14px}
-    .hero-image{
-      background-image:url('https://images.unsplash.com/photo-1581093588401-7b5b6f8d0b2f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=bd9d192e3ec6d0f14e16b2a1b0f2f7f7');
-      background-size:cover;background-position:center;border-radius:14px;height:280px;box-shadow:0 10px 30px rgba(10,20,30,.06)
-    }
-
-    /* ===== Sections ===== */
-    section{padding:28px 0}
-    h3{font-size:20px;margin-bottom:12px}
-    .grid{display:grid;gap:18px}
-    .cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 20px rgba(12,24,48,.04);display:flex;flex-direction:column;gap:8px}
-    .card .meta{font-size:13px;color:var(--muted)}
-    .card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-
-    /* committees */
-    .committees{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
-    .committee{display:flex;gap:12px;align-items:flex-start}
-    .badge{width:54px;height:54px;border-radius:8px;background:linear-gradient(180deg,#f0f7ff,#fff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:18px;border:1px solid rgba(11,99,214,0.07)}
-
-    /* split layout */
-    .split{display:grid;grid-template-columns:1fr 380px;gap:20px}
-    .panel{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(12,24,48,.04)}
-
-    /* footer */
-    footer{border-top:1px solid #eef2f6;padding:28px 0;margin-top:14px;color:var(--muted)}
-    .footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-    /* small utilities */
-    .muted{color:var(--muted)}
-    .tag{display:inline-block;background:#f0f6ff;color:var(--accent);padding:6px 8px;border-radius:999px;font-weight:700;font-size:13px}
-
-    /* responsive */
-    @media (min-width:900px){
-      .hero{grid-template-columns:1fr 460px}
-      .hero-image{height:340px}
-      .menu-toggle{display:none}
-    }
-    @media (max-width:899px){
-      nav ul{display:none}
-      .menu-toggle{display:block}
-      .split{grid-template-columns:1fr}
-    }
-  </style>
+  <title>EPSF-ANU | Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367e?q=80&w=240&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a1c7b5f4b3d85f6f4e8a6c2c9a5a0a7" alt="EPSF logo">
-        <div>
-          <h1>EPSF ANU</h1>
-          <div class="muted" style="font-size:13px">Alexandria Pharmaceutical Students</div>
-        </div>
-      </div>
-
-      <nav>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
-        <ul id="main-nav" role="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#committees">Committees</a></li>
-          <li><a href="#contact" class="cta">Contact</a></li>
-        </ul>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">EPSF-ANU</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="about/">About</a>
+        <a href="committees/">Committees</a>
+        <a href="events/">Events</a>
+        <a href="news/">News</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="home" class="container">
+  <main>
     <section class="hero">
-      <div class="hero-card">
-        <div style="display:flex;align-items:center;gap:12px">
-          <span class="tag">Welcome</span>
-          <div class="muted" style="font-size:13px">EPSF ANU — Events & News</div>
-        </div>
-        <h2>Stay Connected. Stay Inspired.</h2>
-        <p>Explore EPSF ANU: your hub for events, awareness campaigns, and student leadership. Discover upcoming activities, read the latest news, and learn about our committees.</p>
-      </div>
-
-      <div class="hero-image" aria-hidden="true"></div>
-    </section>
-
-    <!-- ABOUT + LATEST -->
-    <section id="about" class="split">
-      <div>
-        <h3>About EPSF ANU</h3>
-        <div class="panel">
-          <p>EPSF ANU (Egyptian Pharmaceutical Students' Federation — Alexandria National University) is a student-led community founded in 2021 dedicated to public health awareness, professional development, and community service. We host workshops, campaigns, and events that connect students with healthcare professionals and the public.</p>
-          <ul style="margin-top:12px;color:var(--muted)">
-            <li><strong>Founded:</strong> 2021</li>
-            <li><strong>Focus:</strong> Events, Public Health, Student Development</li>
-            <li><strong>Committees:</strong> PH, PE, Marketing, HR, SEC GEN, Treasure, LOC</li>
-          </ul>
-        </div>
-
-        <h3 style="margin-top:18px">Latest News</h3>
-        <div class="grid cards">
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7aae6b9f7ea2b3c6a3d1a9f2b2a5f9b1" alt="news">
-            <div class="meta">Nov 10, 2025 • Announcement</div>
-            <h4>Public Health Outreach at Local School</h4>
-            <p class="muted">Our Public Health committee visited a nearby school to deliver hygiene and vaccination awareness sessions.</p>
-          </article>
-
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070e57?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b3b6f1f5f0b4c8c8a3f2d3a4c5e6b7a" alt="news2">
-            <div class="meta">Oct 28, 2025 • Event</div>
-            <h4>Workshop: Career Paths in Pharmacy</h4>
-            <p class="muted">Speakers from pharmacies and industry shared career tips and CV advice for students.</p>
-          </article>
-        </div>
-      </div>
-
-      <aside>
-        <div class="panel">
-          <h3>Upcoming Events</h3>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div style="font-weight:700">Health Awareness Day</div>
-                <div class="muted" style="font-size:13px">Dec 5, 2025 — University Hall</div>
-              </div>
-              <div style="text-align:right">
-                <div style="font-weight:700">Free</div>
-              </div>
-            </div>
-
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div style="font-weight:700">Vaccination Drive</div>
-                <div class="muted" style="font-size:13px">Jan 12, 2026 — Medical Center</div>
-              </div>
-              <div style="text-align:right">
-                <div style="font-weight:700">Open</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-   <!-- COMMITTEES -->
-<section id="committees">
-  <h3>Committees</h3>
-  <div class="grid committees">
-    <div class="card committee">
-      <div class="badge">PH</div>
-      <div>
-        <div style="font-weight:700">Public Health (PH)</div>
-        <div class="muted" style="font-size:13px">Health campaigns, community outreach and awareness.</div>
-      </div>
-    </div>
-    <div class="card committee">
-      <div class="badge">PE</div>
-      <div>
-        <div style="font-weight:700">Professional Events (PE)</div>
-        <div class="muted" style="font-size:13px">Workshops, educational events, and professional development.</div>
-      </div>
-    </div>
-    <div class="card committee">
-      <div class="badge">Marketing</div>
-      <div>
-        <div style="font-weight:700">Marketing</div>
-        <div class="muted" style="font-size:13px">Design, promotion, and social media content.</div>
-      </div>
-    </div>
-    <div class="card committee">
-      <div class="badge">HR</div>
-      <div>
-        <div style="font-weight:700">Human Resources (HR)</div>
-        <div class="muted" style="font-size:13px">Volunteers, onboarding, and internal communication.</div>
-      </div>
-    </div>
-    <div class="card committee">
-      <div class="badge">SEC</div>
-      <div>
-        <div style="font-weight:700">Secretary General (SEC GEN)</div>
-        <div class="muted" style="font-size:13px">Coordination, leadership operations, and committee management.</div>
-      </div>
-    </div>
-    <div class="card committee">
-      <div class="badge">TRE</div>
-      <div>
-        <div style="font-weight:700">Treasure</div>
-        <div class="muted" style="font-size:13px">Financial management, budgets, and resources.</div>
-      </div>
-    </div>
-    <div class="card committee">
-      <div class="badge">LOC</div>
-      <div>
-        <div style="font-weight:700">Local Organizing Committee (LOC)</div>
-        <div class="muted" style="font-size:13px">Event logistics, coordination, and venue management.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- CONTACT / FOOTER -->
-    <section id="contact">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-        <div class="panel">
-          <h3>Contact Us</h3>
-          <p class="muted">Email: <a href="mailto:epsfanu@example.com">epsfanu@example.com</a><br>Phone: +20 123 456 789</p>
-        </div>
-
-        <div class="panel">
-          <h3>Location</h3>
-          <div style="height:200px;background:#eef7ff;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)">
-            Map placeholder — embed Google Maps iframe here
-          </div>
-        </div>
+      <div class="container">
+        <h1>Welcome to EPSF-ANU</h1>
+        <p class="lead">Empowering pharmacy students through education, public health and community action.</p>
+        <a href="about/" class="btn btn-primary">About Us</a>
       </div>
     </section>
 
+    <section class="container cards-row">
+      <div class="card card-highlight">
+        <h3>Open General Assembly (Open GA)</h3>
+        <p>Join our Open GA to learn about committees, meet the board, and get involved.</p>
+        <a class="link" href="events/open-ga-2025.html">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <h3>Latest Events</h3>
+        <div id="home-events"></div>
+        <a class="link" href="events/">All events →</a>
+      </div>
+
+      <div class="card">
+        <h3>Latest News</h3>
+        <div id="home-news"></div>
+        <a class="link" href="news/">All news →</a>
+      </div>
+    </section>
+
+    <section class="container about-blurb">
+      <h2>Get involved</h2>
+      <p>Want to join a committee, lead a project, or run a campaign? Explore our committees and drop a message through the contact details on each page.</p>
+      <a href="committees/" class="btn btn-outline">See Committees</a>
+    </section>
   </main>
 
-  <footer class="container">
-    <div class="footer-row">
-      <div>
-        <strong>EPSF ANU</strong><div class="muted" style="font-size:13px">Bringing pharmacy students together since 2021</div>
-      </div>
-      <div class="muted" style="font-size:13px">© <span id="year"></span> EPSF ANU — All rights reserved</div>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> EPSF-ANU — All rights reserved</p>
     </div>
   </footer>
 
   <script>
-    // year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // mobile menu toggle
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('main-nav');
-    toggle.addEventListener('click', () => {
-      const shown = nav.style.display === 'flex';
-      nav.style.display = shown ? 'none' : 'flex';
-      toggle.setAttribute('aria-expanded', !shown);
-    });
-
-    // smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const t = document.querySelector(a.getAttribute('href'));
-        if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+    // Load top 2 events & news for home
+    fetch('events/data.json').then(r=>r.json()).then(data=>{
+      const mount = document.getElementById('home-events');
+      data.slice(0,2).forEach(e=>{
+        const el = document.createElement('div');
+        el.className='mini';
+        el.innerHTML = `<strong>${e.title}</strong><div class="muted">${e.date}</div>`;
+        mount.appendChild(el);
       });
-    });
+    }).catch(()=>{});
+
+    fetch('news/data.json').then(r=>r.json()).then(data=>{
+      const mount = document.getElementById('home-news');
+      data.slice(0,2).forEach(n=>{
+        const el = document.createElement('div');
+        el.className='mini';
+        el.innerHTML = `<strong>${n.title}</strong><div class="muted">${n.date}</div>`;
+        mount.appendChild(el);
+      });
+    }).catch(()=>{});
   </script>
 </body>
 </html>
-
