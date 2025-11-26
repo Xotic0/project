@@ -40,15 +40,32 @@ body {font-family:'Poppins', sans-serif; background:var(--epsf-gray); color:#222
 .card-text h3 {margin-bottom:10px; color:var(--epsf-blue);}
 .card-text p {font-size:0.95rem;}
 
-/* About Us */
-.about-content {display:flex; align-items:center; gap:40px; justify-content:center; flex-wrap:wrap; background:var(--epsf-white); padding:40px; border-radius:20px; box-shadow:0 6px 18px rgba(0,0,0,0.08);}
-.about-content img {width:350px; border-radius:15px;}
-.about-content p {max-width:600px; font-size:1rem; line-height:1.6;}
 
 /* Committees */
 .committee-list {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
 .committee {padding:15px 25px; background:var(--epsf-white); color:var(--epsf-blue); border-radius:12px; text-decoration:none; font-weight:600; transition:0.3s; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
 .committee:hover {background:var(--epsf-blue); color:var(--epsf-white);}
+
+
+/* About Us - Mobile Fix */
+@media (max-width:768px){
+  .about-content {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;    /* Center horizontally */
+    text-align: center;     /* Center text */
+    padding: 20px;          /* Add some padding */
+  }
+  .about-content img {
+    width: 80%;             /* Shrink image to fit mobile */
+    max-width: 300px;
+    margin-bottom: 20px;    /* Space between image and text */
+  }
+  .about-content p {
+    max-width: 90%;         /* Make text fit nicely */
+  }
+}
+
+
 
 /* Footer */
 footer {text-align:center; padding:30px 20px; color:#777; background:#eaeaea; margin-top:40px;}
