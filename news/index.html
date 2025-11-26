@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>News — EPSF-ANU</title><link rel="stylesheet" href="../style.css"></head>
+<body>
+  <header class="site-header"><div class="container header-inner"><a class="brand" href="../">EPSF-ANU</a></div></header>
+
+  <main class="container">
+    <h1>News</h1>
+    <div id="news-list"></div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© <span id="year"></span> EPSF-ANU</p></div></footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    fetch('data.json').then(r=>r.json()).then(news=>{
+      const mount = document.getElementById('news-list');
+      mount.innerHTML = '';
+      news.forEach(n=>{
+        const card = document.createElement('div');
+        card.className='card';
+        card.innerHTML = `
+          <h3>${n.title}</h3>
+          <div class="muted">${n.date}</div>
+          <p>${n.summary}</p>
+          <a class="link" href="${n.page||'world-cancer-day-2025.html'}">Read →</a>
+        `;
+        mount.appendChild(card);
+      });
+    }).catch(()=>{document.getElementById('news-list').innerHTML = '<div class="card">No news yet.</div>'});
+  </script>
+</body>
+</html>
