@@ -1,0 +1,55 @@
+:root{
+  --epsf-blue: #0b61a4;
+  --epsf-dark: #063a6b;
+  --epsf-light: #f6fbff;
+  --muted: #6b7280;
+  --container-w: 1100px;
+  --radius: 12px;
+  --box-shadow: 0 6px 18px rgba(11,97,164,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--epsf-light);color:#0b2438;line-height:1.5}
+.container{max-width:var(--container-w);margin:0 auto;padding:28px}
+
+.site-header{background:#fff;border-bottom:1px solid #e6eef9}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{font-weight:700;color:var(--epsf-blue);text-decoration:none;font-size:20px}
+.nav a{color:var(--epsf-dark);text-decoration:none;margin-left:18px;font-weight:600}
+.nav a:hover{color:var(--epsf-blue)}
+
+.hero{background:linear-gradient(180deg,var(--epsf-light),#fff);padding:56px 0;border-bottom:1px solid #eaf3ff}
+.hero h1{color:var(--epsf-dark);margin:0;font-size:34px}
+.lead{color:var(--muted);margin:10px 0 22px}
+
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn-primary{background:var(--epsf-blue);color:#fff}
+.btn-outline{background:transparent;border:2px solid var(--epsf-blue);color:var(--epsf-blue)}
+
+.cards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.card{background:#fff;padding:18px;border-radius:var(--radius);box-shadow:var(--box-shadow)}
+.card-highlight{border-left:6px solid var(--epsf-blue)}
+.card h3{margin-top:0}
+.link{display:inline-block;margin-top:10px;color:var(--epsf-blue);text-decoration:none;font-weight:700}
+
+.about-blurb{margin:40px 0;padding:18px;border-radius:12px;background:#fff;box-shadow:var(--box-shadow)}
+
+.site-footer{padding:18px 0;background:#fff;border-top:1px solid #e6eef9;text-align:center;color:var(--muted);margin-top:36px}
+
+.mini{padding:8px 0;border-bottom:1px dashed #eef6ff}
+.muted{color:var(--muted);font-size:13px}
+
+/* Committees grid */
+.commit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+/* Responsive */
+@media (max-width:900px){
+  .cards-row{grid-template-columns:1fr;align-items:stretch}
+  .commit-grid{grid-template-columns:repeat(2,1fr)}
+  .nav{display:none}
+}
+@media (max-width:480px){
+  .commit-grid{grid-template-columns:1fr}
+  .hero h1{font-size:26px}
+}
