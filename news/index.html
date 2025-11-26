@@ -1,46 +1,29 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <nav class="navbar">
-  <a href="/index.html" class="logo">EPSF ANU</a>
-  <ul>
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/committees/ph.html">Committees</a></li>
-    <li><a href="/events/">Events</a></li>
-    <li><a href="/news/">News</a></li>
-    <li><a href="/about/about-us.html">About</a></li>
-  </ul>
-</nav>
+  <title>News - EPSF ANU</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
 
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>News — EPSF-ANU</title><link rel="stylesheet" href="../style.css"></head>
 <body>
-  <header class="site-header"><div class="container header-inner"><a class="brand" href="../">EPSF-ANU</a></div></header>
 
-  <main class="container">
+  <nav class="navbar">
+    <a class="logo" href="../index.html">EPSF ANU</a>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../committees/index.html">Committees</a></li>
+      <li><a href="../events/index.html">Events</a></li>
+      <li><a href="index.html">News</a></li>
+      <li><a href="../about/index.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
     <h1>News</h1>
-    <div id="news-list"></div>
-  </main>
+    <p>Latest updates, announcements, and chapter activities.</p>
+  </div>
 
-  <footer class="site-footer"><div class="container"><p>© <span id="year"></span> EPSF-ANU</p></div></footer>
+  <footer>EPSF ANU © 2025</footer>
 
-  <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-
-    fetch('data.json').then(r=>r.json()).then(news=>{
-      const mount = document.getElementById('news-list');
-      mount.innerHTML = '';
-      news.forEach(n=>{
-        const card = document.createElement('div');
-        card.className='card';
-        card.innerHTML = `
-          <h3>${n.title}</h3>
-          <div class="muted">${n.date}</div>
-          <p>${n.summary}</p>
-          <a class="link" href="${n.page||'world-cancer-day-2025.html'}">Read →</a>
-        `;
-        mount.appendChild(card);
-      });
-    }).catch(()=>{document.getElementById('news-list').innerHTML = '<div class="card">No news yet.</div>'});
-  </script>
 </body>
 </html>
